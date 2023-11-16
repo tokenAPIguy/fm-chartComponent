@@ -23,7 +23,7 @@ hr {
 .active {
   background: var(--cyan) !important;
 }
-.bar {
+.column {
   background: var(--softRed);
   border-radius: 10px;
   width: 75%;

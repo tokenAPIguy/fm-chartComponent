@@ -1,49 +1,48 @@
 "use strict";
 
 // DOM elements
-const day = document.querySelectorAll(".day");
-const columns = document.querySelectorAll(".bar");
-const popup = document.querySelectorAll(".popup");
+const days = document.querySelectorAll(".day");
+const columns = document.querySelectorAll(".column");
+const popups = document.querySelectorAll(".popup");
 
-// Async function to generate graph
+// Fetch data from data.json
 async function displayGraph() {
   const res = await fetch("./data.json");
   const data = await res.json();
 
-  // Create days array
-  const days = data.map((n) => {
+  // Map 'day' to an array
+  const colTitle = data.map((n) => {
     return n.day;
   });
 
-  // Create amount array
+  // Map 'amount' to an array
   const amount = data.map((n) => {
     return n.amount;
   });
 
-  // Add days to the graph x axis
-  day.forEach((day, i) => {
-    day.textContent = days[i];
+  // Render day of the week on x axis title
+  days.forEach((day, index) => {
+    day.textContent = colTitle[index];
   });
 
-  // Render each bar
-  columns.forEach((column, i) => {
-    column.style.height = `${amount[i] * 5}px`;
+  // Render bars on graph
+  columns.forEach((column, index) => {
+    column.style.height = `${amount[index] * 5}px`;
 
-    // Apply mouseover + mouseout event for displaying popup and hover effects
+    // Add hover effects for color shift and popup reveal
     column.addEventListener("mouseover", () => {
-      columns[i].classList.add("active");
-      popup[i].classList.remove("hidden");
+      column.classList.add("active");
+      popups[index].classList.remove("hidden");
     });
-
     column.addEventListener("mouseout", () => {
-      columns[i].classList.remove("active");
-      popup[i].classList.add("hidden");
+      column.classList.remove("active");
+      popups[index].classList.add("hidden");
     });
   });
 
-  // Render popup
-  popup.forEach((popup, i) => {
-    popup.textContent = `$${amount[i]}`;
+  // Render popup on graph
+  popups.forEach((popup, index) => {
+    popup.textContent = `$${amount[index]}`;
   });
 }
 displayGraph();
