@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+:root {
+  /* Colors */
+  --softRed: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 35%, 60%);
+  --darkBrown: hsl(25, 47%, 15%);
+  --mediumBrown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --veryPaleOrange: hsl(33, 100%, 98%);
+}
+body {
+  background-color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+}
+hr {
+  border: none;
+  color: var(--cream);
+}
+.active {
+  background: var(--cyan) !important;
+}
+.bar {
+  background: var(--softRed);
+  border-radius: 10px;
+  width: 75%;
+}
+.container {
+  border-radius: 15px;
+  padding: 25px;
+  width: 854.5px;
+  margin-bottom: 20px;
+}
+.content--balance {
+  background: var(--softRed);
+  color: var(--veryPaleOrange);
+}
+.content--spending {
+  background: var(--veryPaleOrange);
+  color: var(--darkBrown);
+}
+.content--spending .subheading {
+  color: var(--mediumBrown);
+}
+.graph {
+  margin-top: 50px;
+}
+.graph--range {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 25px 0px;
+  column-gap: 10px;
+  height: 400px;
+}
+.graph--range .col {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+}
+.hidden {
+  display: none;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.logo {
+  float: inline-end;
+}
+.percentage {
+  font-weight: 700;
+}
+.popup {
+  background: var(--darkBrown);
+  color: var(--veryPaleOrange);
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+.section--heading {
+  font-size: 36px;
+  font-weight: 700;
+}
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+.summary .col {
+  display: flex;
+  flex-direction: column;
+}
+.summary .col:first-child {
+  grid-column: 1 / 2;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.summary .col:last-child {
+  grid-column: 2 / 3;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

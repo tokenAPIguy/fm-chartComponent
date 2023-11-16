@@ -1,43 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Expenses chart component</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="container content--balance">
+        <span><p>My balance</p></span>
+        <span
+          ><p class="section--heading">
+            $921.48
+            <img src="images/logo.svg" alt="logo" class="logo" />
+          </p>
+        </span>
+      </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="container content--spending">
+        <span><p class="section--heading">Spending - Last 7 days</p></span>
+        <div class="graph">
+          <div class="graph--range">
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+            <div class="col">
+              <span class="popup hidden"></span>
+              <span class="bar"></span>
+              <span class="day subheading"></span>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="summary">
+          <div class="col">
+            <span>
+              <p class="subheading">Total this month</p>
+            </span>
+            <span>
+              <p class="section--heading">$478.33</p>
+            </span>
+          </div>
+          <div class="col">
+            <span>
+              <p class="percentage">+2.4%</p>
+            </span>
+            <span>
+              <p class="subheading">from last month</p>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Jake Levy</a>.
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
